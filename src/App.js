@@ -6,12 +6,12 @@ import React, { useState } from 'react'
 import TextForm from './components/TextForm';
 import Alert from "./components/Alert";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark mode has been enabled", "success")
-      document.title="TextUtils-Home(Dark)"
+      // document.title="TextUtils-Home(Dark)"
       setBtn('primary');
       
     }
@@ -51,7 +51,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#002100';
       showAlert("Green mode has been enabled", "success")
-      document.title="TextUtils-Home(Green)"
+      // document.title="TextUtils-Home(Green)"
       setBtn('success');
     }
     else{
@@ -63,22 +63,23 @@ function App() {
   }
   return (
     <>
-      <Router>
+      {/* <Router> */}
       <Navbar title="Textutils" mode ={mode} toggleMode = {toggleMode} green={green}/>
       <Alert alert={alert}/>
       <div className="container my-3">
-      <Switch>
+      {/* <Switch>
           <Route path="/about">
             <About />
           </Route>
           <Route path="/">
-          <TextForm heading="Enter the text to analyze" mode ={mode} showAlert={showAlert}  btn = {btn}/>
 
           </Route>
-        </Switch>
+        </Switch> */}
         {/* <About/> */}
+          <TextForm heading="Enter the text to analyze" mode ={mode} showAlert={showAlert}  btn = {btn}/>
+
       </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
