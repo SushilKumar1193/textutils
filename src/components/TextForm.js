@@ -18,7 +18,6 @@ export default function TextForm(props) {
             // setText("You have clicked on handleUpClick")
             }
             const reverseonclick = ()=>{
-
                 let newtext = text.split(/\s/).reverse().join(" ");
                 setText(newtext);
         props.showAlert("Text is reversed","success")
@@ -33,7 +32,6 @@ export default function TextForm(props) {
             document.getSelection().removeAllRanges();
             navigator.clipboard.writeText(txt.value);
         props.showAlert("Text is successfully copied to clipboard","success")
-
         }
     const [text,setText] = useState('Enter text here');
     // text = "new text";   this is wrong way to update state. we cant change state directly
@@ -53,10 +51,10 @@ export default function TextForm(props) {
         <div className="container my-3" style ={{color:props.mode==='dark'?'white':'black'}}>
             <h1>Your Text summary</h1>
             <p>
-                {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters.
+                {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters.
             </p>
             <p>
-                {0.008 * text.split(" ").filter((element)=>{return element.length!=0}).length} minutes to read.
+                {0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length} minutes to read.
             </p>
             <h2>
                 Preview

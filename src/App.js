@@ -1,5 +1,5 @@
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import React, { useState } from 'react'
 
@@ -35,7 +35,6 @@ function App() {
       showAlert("Dark mode has been enabled", "success")
       // document.title="TextUtils-Home(Dark)"
       setBtn('primary');
-      
     }
     else{
       setMode('light');
@@ -75,8 +74,8 @@ function App() {
 
           </Route>
         </Switch> */}
-        {/* <About/> */}
           <TextForm heading="Enter the text to analyze" mode ={mode} showAlert={showAlert}  btn = {btn}/>
+          <About/>
 
       </div>
       {/* </Router> */}
